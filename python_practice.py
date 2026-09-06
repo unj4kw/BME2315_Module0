@@ -10,7 +10,20 @@
 # Example: If N = 5, the output should be 0 + 1 + 1 + 2 + 3 = 7
 
 """ # you can use three double-quotes to write multi-line comments
-XXX Write your pseudocode here XXX 0, 5, 15, 20, 25, 30, 35, 40 
+XXX Write your pseudocode here XXX 0, 1, 3, 7, 13, 17, 23, 27 
+
+enter N: 
+i=0 
+j=1 
+sum=0 
+count=0 
+while count <= N 
+    sum = sum + i 
+    next= i+j 
+    j = next 
+    count = count +1 
+end while 
+print sum 
 
 """
 
