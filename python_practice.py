@@ -66,10 +66,10 @@ print(total) #1
 # %% ###########################################################
 # Problem 3: Using common Python libraries
 # What is the standard deviation of the first 10 numbers in the fibonacci sequence? Use the numpy library to calculate the standard deviation.
-import numpy as np  #to import the numpy library, which is a powerful library for numerical computing in Python. It provides support for arrays, matrices, and many mathematical functions. first you need to install numpy using pip install numpy in the terminal. Then you can import it in your code using the import statement.
+import numpy as np #to import the numpy library, which is a powerful library for numerical computing in Python. It provides support for arrays, matrices, and many mathematical functions. first you need to install numpy using pip install numpy in the terminal. Then you can import it in your code using the import statement.
 fibonacci_sequence = [0, 1, 1, 2, 3, 5, 8, 13, 21, 34] 
 std_dev = np.std(fibonacci_sequence) #standard deviation of the first 10 numbers in the fibonacci sequence is calculated using the numpy library. The np.std() function calculates the standard deviation of the input array. The input array is the first 10 numbers in the fibonacci sequence, which is stored in the variable fibonacci_sequence. The result is stored in the variable std_dev.
-print("The standard deviation of the first 10 numbers in the fibonacci sequence is: ", std)
+print("The standard deviation of the first 10 numbers in the fibonacci sequence is: ", std_dev)
 
 # %% ###########################################################
 # Problem 4: Don't repeat yourself by writing functions
@@ -104,28 +104,29 @@ print("Sums of the first N Fibonacci numbers:", sums)
 
 # You will only see one error at a time when you run the code. After fixing one error, run the code again to see the next error. Your final code should work correctly and will have comments where the original errors were.
 #Type Error: The variable 'index' is used before it is defined. It should be initialized before the while loop.
-#
+#unboundlocal error- find_fib_even_above_limit is not defined. This will cause an UnboundLocalError when trying to call the function. It should be defined before it is called.
+#unbound local error- cannot access local variable 'index' where it is not associated with a value. This will cause an UnboundLocalError when trying to print the result. It should be defined before it is printed. we define "index" by 
 
-def find_fib_above_limit(limit):
+def find_fib_even_above_limit(limit):
     """# The function inputs an integer called "limit" and finds the first number that goes above "limit" in the fibonacci sequence. It returns the index of that number.
     :param limit: limit of fibonacci sequence
     :type limit: integer
     :return: index of the first number above limit
     :rtype: integer
     """
-    a = "0"
-    b = "1"
+    a = 0
+    b = 1
+    index=0         #initialize index to 0 before the while loop to avoid UnboundLocalError. This will ensure that the variable is defined before it is used in the while loop.
+
 #how a and b are defined as strings instead of integers. This will cause a TypeError when trying to add them together. They should be defined as integers.
-    while a <= limit:
+    while b <= limit:
         next_value = a + b
         a = b
         b = next_value
-        index += 1
-
+        index += b  
     return index
 
-
-result = find_fib_above_limit(50)
+result = find_fib_even_above_limit(50)
 print("The index of the first number above your limit is: ", result)
 # %% ###########################################################
 # Problem 6: Test your code
@@ -133,7 +134,8 @@ print("The index of the first number above your limit is: ", result)
 
 
 def sum_even_fib(limit):
-    a, b = 0, 1
+    a=0
+    b=1
     total = 0
     while b <= limit:
         if b % 2 == 0:  # This line checks if the Fibonacci number is even
@@ -146,7 +148,9 @@ def sum_even_fib(limit):
 # Add your test cases here
 test_cases = [10, 20, 30, 40, 50]
 for limit in test_cases:
-    result = sum_even_fib(limit)
+    find_fib_even_above_limit = sum_even_fib  # Assign the function to a variable for testing
+    sum_even_fib(limit)  # Call the function with the test case
+    esult = find_fib_even_above_limit (50)
     print(f"The sum of even Fibonacci numbers up to {limit} is: {result}")
-#is the total updated correctly? The total is updated correctly, but it is not being returned correctly. The function should return the total, not the last even Fibonacci number. To fix this, we need to change the line "return total" to "return total".
+# is the total updated correctly? The total is updated correctly, but it is not being returned correctly. The function should return the total, not the last even Fibonacci number. To fix this, we need to change the line "return total" to "return total".
 # %%
