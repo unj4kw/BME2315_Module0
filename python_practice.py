@@ -17,13 +17,13 @@ i=0
 j=1 
 sum=0 
 count=0 
-while count <= N 
-    sum = sum + i 
-    next= i+j 
-    j = next 
-    count = count +1 
-end while 
-print sum 
+while count <= N #count will always be less than or equal to N, so the loop will run until count is equal to N. This can be dangerous if N is not set to a number greater than 0. It can keep the code running forever.
+    sum = sum + i #0+0= 0 
+    next= i+j #1+0=1 
+    j = next #next=1
+    count = count +1  #0+1=1 
+end while #while loop will end when count is equal to N. This can be dangerous if N is not set to a number greater than 0. It can keep the code running forever.
+print sum #in the end, the sum of the first N numbers in the fibonacci sequence will be printed. This can be dangerous if N is not set to a number greater than 0. It can keep the code running forever.
 
 """
 
@@ -48,27 +48,27 @@ while count < N:
 
 print(total) #1
 
-#N=3 
+#N=3 ##N is equal to 3, so the while loop will run 3 times. This can be dangerous if N is not set to a number greater than 0. It can keep the code running forever.
 
-#a = 0 # set a to the first fibonacci number so we can start the sequence 
-#b=1 # set b to the second fibonacci number so we can countinue with the sequence
-#count =0 #count is set to 0 to start the while loop
-#total = 0 #total is set to 0 to continue the while loop
-#while count < N: #while loop will run until count is less than N. This can be dangerous if N is not set to a number greater than 0. It can keep the code running forever.
-    #total = total + b #total is set to the sum of total and b. This is where the error is. It should be total = total + a. The first number in the fibonacci sequence is 0, not 1.
-    #next_value= a+b #next_value is set to the sum of a and b. This is the next number in the fibonacci sequence.
-    #a=b a='0' 
-    #b= next_value b='1', next_value= 13 
-    #count = count+1 
-#print(total) total = 20 
+#a = 0  ##set a to the first fibonacci number so we can start the sequence 
+#b=1 # #set b to the second fibonacci number so we can countinue with the sequence
+#count =0 ##count is set to 0 to start the while loop
+#total = 0 ##total is set to 0 to continue the while loop
+#while count < N: ##while loop will run until count is less than N. This can be dangerous if N is not set to a number greater than 0. It can keep the code running forever.
+    #total = total + b ##total is set to the sum of total and b. This is where the error is. It should be total = total + a. The first number in the fibonacci sequence is 0, not 1.
+    #next_value= a+b ##next_value is set to the sum of a and b. This is the next number in the fibonacci sequence.
+    #a=b a='0' ## a = 0 because b is equal to 1. This is where the error is. It should be a = next_value. The first number in the fibonacci sequence is 0, not 1.
+    #b= next_value b='1', next_value= 13 ##there is no error here because b is equal to next_value. This is the next number in the fibonacci sequence.
+    #count = count+1  ##the count value here helps to keep track of how many times the while loop has run. This is important because it will help to determine when to stop the while loop. 
+#print(total) total = 20  ##the total value here is the sum of the first N numbers in the fibonacci sequence. 
 
 
 # %% ###########################################################
 # Problem 3: Using common Python libraries
 # What is the standard deviation of the first 10 numbers in the fibonacci sequence? Use the numpy library to calculate the standard deviation.
-import numpy as np 
-fibonacci_sequence = [0, 1, 1, 2, 3, 5, 8, 13, 21, 34]
-std_dev = np.std(fibonacci_sequence)
+import numpy as np  #to import the numpy library, which is a powerful library for numerical computing in Python. It provides support for arrays, matrices, and many mathematical functions. first you need to install numpy using pip install numpy in the terminal. Then you can import it in your code using the import statement.
+fibonacci_sequence = [0, 1, 1, 2, 3, 5, 8, 13, 21, 34] 
+std_dev = np.std(fibonacci_sequence) #standard deviation of the first 10 numbers in the fibonacci sequence is calculated using the numpy library. The np.std() function calculates the standard deviation of the input array. The input array is the first 10 numbers in the fibonacci sequence, which is stored in the variable fibonacci_sequence. The result is stored in the variable std_dev.
 print("The standard deviation of the first 10 numbers in the fibonacci sequence is: ", std)
 
 # %% ###########################################################
