@@ -68,10 +68,10 @@ print(total) #1
 # What is the standard deviation of the first 10 numbers in the fibonacci sequence? Use the numpy library to calculate the standard deviation.
 import numpy as np #to import the numpy library, which is a powerful library for numerical computing in Python. It provides support for arrays, matrices, and many mathematical functions. first you need to install numpy using pip install numpy in the terminal. Then you can import it in your code using the import statement.
 fibonacci_sequence = [0, 1, 1, 2, 3, 5, 8, 13, 21, 34] 
-std_dev = np.std(fibonacci_sequence) #standard deviation of the first 10 numbers in the fibonacci sequence is calculated using the numpy library. The np.std() function calculates the standard deviation of the input array. The input array is the first 10 numbers in the fibonacci sequence, which is stored in the variable fibonacci_sequence. The result is stored in the variable std_dev.
+std_dev = np.std(fibonacci_sequence) #standard deviation of the first 10 numbers in the fibonacci sequence is calculated using the numpy library. The numpylibrary.std() function calculates the standard deviation of the input array. The input array is the first 10 numbers in the fibonacci sequence, which is stored in the variable fibonacci_sequence. The result is stored in the variable std_dev.
 print("The standard deviation of the first 10 numbers in the fibonacci sequence is: ", std_dev)
-
-# %% ###########################################################
+#module not found error for no module named 'numpy'. Even after isntalling 'numpy.' Therefore, could not solve this error. 
+# # %% ###########################################################
 # Problem 4: Don't repeat yourself by writing functions
 # Write a function that takes an integer N as input and returns the sum of the first N numbers in the fibonacci sequence.
 # Then use this function to calculate the sums for N = 5, 10, 15, 20, 25, and 30 and print them as a list.
